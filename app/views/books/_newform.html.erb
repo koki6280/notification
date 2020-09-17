@@ -1,15 +1,16 @@
+<button id="tutorial"> チュートリアル開始 </button>
 <%= form_for(book) do |f| %>
 	<div class="field row">
 		<%= f.label :title %>
-		<%= f.text_field :title, class: "col-xs-12 book_title" %>
+		<%= f.text_field :title, class: "col-xs-12 book_title", id: 'introjs-step1' %>
 	</div>
 
 	<div class="field row">
 		<%= f.label :body %>
-		<%= f.text_area :body, class: "col-xs-12 book_body" %>
+		<%= f.text_area :body, class: "col-xs-12 book_body", id: 'introjs-step2' %>
 	</div>
 
 	<div class="actions row">
-		<%= f.submit class: "btn btn-primary col-xs-12" %>
+		<%= f.submit class: "btn btn-primary col-xs-12", id: 'introjs-step3' %>
 	</div>
 <% end %>
