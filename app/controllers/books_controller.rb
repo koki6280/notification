@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.rank(:row_order)
     @book = Book.new
   end
 
@@ -23,6 +23,12 @@ class BooksController < ApplicationController
       @books = Book.all
       render 'index'
     end
+  end
+
+  def sort
+    book = Book.find(params[:book_id])
+    book.update(book_params)
+    render body: nil
   end
 
   def edit
@@ -44,7 +50,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :row_order_position)
   end
 
   def ensure_correct_user

@@ -40,3 +40,9 @@ body {
 .show-comment{
 	padding: 0 5px;
 }
+
+.table-sortable {
+	tr.item {
+	  cursor: row-resize;
+	}
+}
