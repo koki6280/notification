@@ -71,5 +71,6 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-ui-rails'
 gem 'ranked-model'
 gem 'rails-i18n'
+gem 'devise-i18n'
 
 
