@@ -5,6 +5,11 @@ class FavoritesController < ApplicationController
     @book = Book.find(params[:book_id])
     favorite = @book.favorites.new(user_id: current_user.id)
     favorite.save
+    @book.create_notification_by(current_user)
+      respond_to do |format|
+        format.html {redirect_to request.referrer}
+        format.js
+      end
   end
 
   def destroy
